@@ -8,7 +8,7 @@
 - [x] Instalar prompt-sync <!-- biblioteca para ler input do usuário no terminal -->
 - [x] Criar dadosLivros.js <!-- array inicial com os 10 livros cadastrados (dados brutos) -->
 - [x] Criar classe Livro (Livro.js) <!-- RF09: define o molde do objeto livro com constructor -->
-- [ ] Criar listarLivros.js <!-- RF02: percorre o array e exibe todos os livros no console -->
+- [x] Criar listarLivros.js <!-- RF02: percorre o array e exibe todos os livros no console -->
 - [ ] Criar buscarLivro.js <!-- RF03: busca um livro pelo título e exibe seus dados -->
 - [ ] Criar listarDisponiveis.js <!-- RF04: filtra e exibe apenas os livros com disponivel = true -->
 - [ ] Criar cadastrarLivro.js <!-- RF05: coleta dados do usuário e adiciona novo livro ao array -->

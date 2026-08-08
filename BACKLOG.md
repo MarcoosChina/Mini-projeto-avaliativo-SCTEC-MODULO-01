@@ -2,17 +2,23 @@
 
 # Backlog - Sistema de Biblioteca
 
-## TODOS
+## Marcos
 
-- [x] Configurar package.json (type: module)
-- [x] Instalar prompt-sync
-- [x] Criar dadosLivros.js
-- [x] Criar classe Livro (Livro.js)
-- [ ] Criar listarLivros.js (RF02)
-- [ ] Criar buscarLivro.js (RF03)
-- [ ] Criar listarDisponiveis.js (RF04)
-- [ ] Criar cadastrarLivro.js (RF05)
-- [ ] Criar index.js com menu (RF01)
+- [x] Configurar package.json <!-- habilita ES Modules (type: module) e instala prompt-sync -->
+- [x] Instalar prompt-sync <!-- biblioteca para ler input do usuário no terminal -->
+- [x] Criar dadosLivros.js <!-- array inicial com os 10 livros cadastrados (dados brutos) -->
+- [x] Criar classe Livro (Livro.js) <!-- RF09: define o molde do objeto livro com constructor -->
+- [ ] Criar listarLivros.js <!-- RF02: percorre o array e exibe todos os livros no console -->
+- [ ] Criar buscarLivro.js <!-- RF03: busca um livro pelo título e exibe seus dados -->
+- [ ] Criar listarDisponiveis.js <!-- RF04: filtra e exibe apenas os livros com disponivel = true -->
+- [ ] Criar cadastrarLivro.js <!-- RF05: coleta dados do usuário e adiciona novo livro ao array -->
+- [ ] Criar index.js com menu <!-- RF01: exibe o menu e chama as funções conforme opção escolhida -->
+
+## Gregory
+
+- [ ] Criar realizarEmprestimo.js <!-- RF06: marca disponivel como false se o livro estiver livre -->
+- [ ] Criar realizarDevolucao.js <!-- RF07: marca disponivel como true ao devolver o livro -->
+- [ ] Criar exibirEstatisticas.js <!-- RF08: calcula totais, disponibilidade e média de páginas -->
 
 ## Compartilhado
 

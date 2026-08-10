@@ -11,8 +11,8 @@
 - [x] Criar listarLivros.js <!-- RF02: percorre o array e exibe todos os livros no console -->
 - [x] Criar buscarLivro.js <!-- RF03: busca um livro pelo título e exibe seus dados -->
 - [x] Criar listarDisponiveis.js <!-- RF04: filtra e exibe apenas os livros com disponivel = true -->
-- [ ] Criar cadastrarLivro.js <!-- RF05: coleta dados do usuário e adiciona novo livro ao array -->
-- [ ] Criar index.js com menu <!-- RF01: exibe o menu e chama as funções conforme opção escolhida -->
+- [x] Criar cadastrarLivro.js <!-- RF05: coleta dados do usuário e adiciona novo livro ao array -->
+- [x] Criar index.js com menu <!-- RF01: exibe o menu e chama as funções conforme opção escolhida -->
 
 ## Gregory
 

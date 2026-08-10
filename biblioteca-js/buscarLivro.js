@@ -7,8 +7,7 @@ export function buscarLivro(titulo){
     //na função de callback, a condição é que o título do livro seja igual ao
     //título fornecido como argumento da função buscarLivro. Se um livro com o título correspondente 
     //for encontrado, ele será armazenado na variável livroEncontrado. Caso contrário, livroEncontrado será undefined.
-    const livroEncontrado = dadosLivros.find((livro)=> livro.titulo === titulo);
-
+    const livroEncontrado = dadosLivros.find((livro) => livro.titulo.toUpperCase() === titulo.toUpperCase());
     if (livroEncontrado){
         console.log('Titulo: '+ livroEncontrado.titulo.toUpperCase());
         console.log('Autor: '+ livroEncontrado.autor);
@@ -17,7 +16,6 @@ export function buscarLivro(titulo){
         console.log('Disponivel: '+livroEncontrado.disponivel);
     }else{
         console.log('Livro não encontrado');
-    }
+    }   
 
 }
-    

@@ -13,9 +13,10 @@
 //7- EXIBIR ESTATISTICAS
 //0- SAIR
 import { buscarLivro } from './buscarLivro.js';
-import PromptSync from 'prompt-sync';
 import { listarDisponiveis } from './listarDisponiveis.js';
 import { listarLivros } from './listarLivros.js';
+import { cadastrarLivro } from './cadastrarLivro.js';
+import PromptSync from 'prompt-sync';
 
 const prompt = PromptSync();
 
@@ -30,4 +31,7 @@ if (opcao === '2'){
 }
 if (opcao === '3'){
     listarDisponiveis();
+}
+if (opcao === '4'){
+    cadastrarLivro();
 }

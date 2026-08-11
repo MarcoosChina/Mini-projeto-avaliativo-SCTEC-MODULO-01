@@ -16,6 +16,9 @@ import { buscarLivro } from './buscarLivro.js';
 import { listarDisponiveis } from './listarDisponiveis.js';
 import { listarLivros } from './listarLivros.js';
 import { cadastrarLivro } from './cadastrarLivro.js';
+import { realizarEmprestimo } from './realizarEmprestimo.js';
+import { realizarDevolucao } from './realizarDevolucao.js';
+import { exibirEstatisticas } from './exibirEstatisticas.js';
 import PromptSync from 'prompt-sync';
 const prompt = PromptSync();
 
@@ -47,6 +50,17 @@ do{
     }
     if (opcao === '4'){
         cadastrarLivro();
+    }
+    if (opcao === '5'){
+        const titulo = prompt('Digite o título do livro: ');
+        realizarEmprestimo(titulo);
+    }
+    if (opcao === '6'){
+        const titulo = prompt('Digite o título do livro: ');
+        realizarDevolucao(titulo);
+    }
+    if (opcao === '7'){
+        exibirEstatisticas();
     }
 }while (opcao != '0');
 console.log('Saindo do sistema...');

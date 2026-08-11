@@ -1,4 +1,4 @@
-const dadosLivros = [
+export const dadosLivros = [
     {
         titulo: "JavaScript para Iniciantes",
         autor: "Ana Souza",

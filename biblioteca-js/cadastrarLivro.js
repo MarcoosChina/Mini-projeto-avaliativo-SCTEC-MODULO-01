@@ -1,25 +1,15 @@
 import { dadosLivros } from './dadosLivros.js'; 
 import { Livro } from "./livro.js";
-import readline from 'readline';
+import PromptSync from 'prompt-sync';
 
-let rl;
+const prompt = PromptSync();
 
 export function cadastrarLivro(){
-    rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-    
-    rl.question('Digite o titulo do livro: ', (titulo) => {
-        rl.question('Digite o autor do livro: ', (autor) => {
-            rl.question('Digite a categoria do livro: ', (categoria) => {
-                rl.question('Digite o N° de páginas do livro: ', (paginas) => {
-                    const livroAdicionado = new Livro(titulo.toUpperCase(), autor, categoria, parseInt(paginas));
-                    dadosLivros.push(livroAdicionado);
-                    console.log('Livro cadastrado com sucesso!');
-                    rl.close();
-                });
-            });
-        });
-    });
+    let titulo = prompt('Digite o titulo do livro: ');
+    let autor = prompt('Digite o autor do livro: ');
+    let categoria = prompt('Digite a categoria do livro: ');
+    let paginas = parseInt(prompt('Digite o N° de páginas do livro: '));
+    const livroAdicionado = new Livro(titulo.toUpperCase(), autor, categoria, paginas);
+    dadosLivros.push(livroAdicionado);
+    console.log('Livro cadastrado com sucesso!');
 }

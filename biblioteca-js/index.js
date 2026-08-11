@@ -1,21 +1,19 @@
-import readline from 'readline';
-import { listarLivros } from './listarLivros.js';
 import { buscarLivro } from './buscarLivro.js';
 import { listarDisponiveis } from './listarDisponiveis.js';
+import { listarLivros } from './listarLivros.js';
 import { cadastrarLivro } from './cadastrarLivro.js';
 import { realizarEmprestimo } from './realizarEmprestimo.js';
 import { realizarDevolucao } from './realizarDevolucao.js';
 import { exibirEstatisticas } from './exibirEstatisticas.js';
+import PromptSync from 'prompt-sync';
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const prompt = PromptSync();
 
-function exibirMenu() {
-    console.log('\n=====================');
-    console.log('SISTEMA DE BIBLIOTECA');
-    console.log('=====================');
+let opcao = '';
+do{
+    console.log('================================================');
+    console.log('SISTEMA DE BIBLIOTECA autores: Marcos e Gregory');
+    console.log('================================================');
     console.log('1- LISTAR LIVROS');
     console.log('2- BUSCAR LIVRO');
     console.log('3- LISTAR LIVROS DISPONIVEIS');
@@ -24,65 +22,32 @@ function exibirMenu() {
     console.log('6- REALIZAR DEVOLUÇÃO');
     console.log('7- EXIBIR ESTATISTICAS');
     console.log('0- SAIR');
-    console.log('=====================\n');
-}
+    console.log('================================================');
+    opcao = prompt('Digite uma opcao: ');
 
-let continuar = true;
-
-function perguntar() {
-    if (!continuar) return;
-    
-    exibirMenu();
-    rl.question('Escolha uma opção: ', (resposta) => {
-        processarEscolha(resposta);
-    });
-}
-
-function processarEscolha(opcao) {
-    switch(opcao) {
-        case '1':
-            listarLivros();
-            perguntar();
-            break;
-        case '2':
-            rl.question('Digite o título do livro: ', (titulo) => {
-                buscarLivro(titulo);
-                perguntar();
-            });
-            break;
-        case '3':
-            listarDisponiveis();
-            perguntar();
-            break;
-        case '4':
-            cadastrarLivro();
-            setTimeout(perguntar, 100);
-            break;
-        case '5':
-            rl.question('Digite o título do livro: ', (titulo) => {
-                realizarEmprestimo(titulo);
-                perguntar();
-            });
-            break;
-        case '6':
-            rl.question('Digite o título do livro: ', (titulo) => {
-                realizarDevolucao(titulo);
-                perguntar();
-            });
-            break;
-        case '7':
-            exibirEstatisticas();
-            perguntar();
-            break;
-        case '0':
-            console.log('Saindo do sistema...');
-            continuar = false;
-            rl.close();
-            break;
-        default:
-            console.log('Opção inválida! Tente novamente.');
-            perguntar();
+    if (opcao === '1'){
+        listarLivros();
     }
-}
-
-perguntar();
+    if (opcao === '2'){
+        const titulo = prompt('Digite o título do livro que você quer buscar: ');
+        buscarLivro(titulo);
+    }
+    if (opcao === '3'){
+        listarDisponiveis();
+    }
+    if (opcao === '4'){
+        cadastrarLivro();
+    }
+    if (opcao === '5'){
+        const titulo = prompt('Digite o título do livro: ');
+        realizarEmprestimo(titulo);
+    }
+    if (opcao === '6'){
+        const titulo = prompt('Digite o título do livro: ');
+        realizarDevolucao(titulo);
+    }
+    if (opcao === '7'){
+        exibirEstatisticas();
+    }
+}while (opcao != '0');
+console.log('Saindo do sistema...');
